@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #333;
+  padding: 12px 24px;
+}
+
+.navbar__container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.navbar__item {
+  display: inline-block;
+}
+
+.navbar__link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar__link--active {
+  background-color: #007acc;
+  color: white;
+}
+
+.main-content {
+  padding: 20px;
+}

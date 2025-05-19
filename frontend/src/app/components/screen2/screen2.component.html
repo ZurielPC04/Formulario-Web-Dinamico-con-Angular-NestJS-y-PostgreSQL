@@ -1,0 +1,41 @@
+<div class="screen screen2">
+  <h2 class="screen__title">Pantalla 2: Ciudad y Género</h2>
+
+  <!-- Mostrar datos anteriores -->
+  <section class="form form--readonly">
+    <div class="form__group">
+      <label class="form__label">Nombre:</label>
+      <input class="form__input" [value]="datosPrevios.nombre" type="text" disabled />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label">Edad:</label>
+      <input class="form__input" [value]="datosPrevios.edad" type="number" disabled />
+    </div>
+  </section>
+
+  <!-- Formulario actual -->
+  <section class="form form--active">
+    <div class="form__group">
+      <label class="form__label" for="ciudad">Ciudad:</label>
+      <input id="ciudad" class="form__input" [(ngModel)]="ciudad" type="text"
+        placeholder="Ciudad de residencia"
+      />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="genero">Género:</label>
+      <select id="genero" class="form__select" [(ngModel)]="genero">
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="form__actions">
+      <button class="form__button" (click)="guardarYContinuar()">Guardar y continuar</button>
+    </div>
+  </section>
+
+</div>

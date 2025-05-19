@@ -1,0 +1,25 @@
+<div class="screen screen1">
+  <h2 class="screen__title">Pantalla 1: Nombre y Edad</h2>
+
+  <!-- Formulario para capturar nombre y edad -->
+  <section class="form form--active">
+    <div class="form__group">
+      <label class="form__label" for="nombre">Nombre:</label>
+      <input id="nombre" class="form__input" [(ngModel)]="datos.nombre" type="text"
+        placeholder="Ingresa tu nombre"
+      />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="edad">Edad:</label>
+      <input id="edad" class="form__input" [(ngModel)]="datos.edad" type="number"
+        placeholder="Ingresa tu edad"
+      />
+    </div>
+
+    <div class="form__actions">
+      <button class="form__button" (click)="guardarYContinuar()">Guardar y continuar</button>
+    </div>
+  </section>
+
+</div>

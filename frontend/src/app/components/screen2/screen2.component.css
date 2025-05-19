@@ -1,0 +1,139 @@
+/* Estilos base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal de pantalla */
+.screen {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.screen__title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Secciones del formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.form--readonly {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+/* Grupo de campos (etiqueta + input) */
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas */
+.form__label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Campos de entrada */
+.form__input,
+.form__textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.form__input:disabled {
+  background-color: #e9ecef;
+}
+
+/* Área de texto */
+.form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botones */
+.form__button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form__button:hover {
+  background-color: #0056b3;
+}
+
+/* Acciones (botón de enviar) */
+.form__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Mensajes de estado */
+.form__message {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+.form__message--success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.form__message--error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Barra de navegación */
+.navbar-container {
+  background-color: #343a40;
+  padding: 1rem 0;
+}
+
+.navbar {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar__link {
+  color: #f8f9fa;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  background-color: #495057;
+}

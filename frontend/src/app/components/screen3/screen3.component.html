@@ -1,0 +1,54 @@
+<div class="screen screen3">
+  <h2 class="screen__title">Pantalla 3: Ocupación y Comentario</h2>
+
+  <!-- Mostrar datos anteriores -->
+  <section class="form form--readonly">
+    <div class="form__group">
+      <label class="form__label">Nombre:</label>
+      <input class="form__input" [value]="datosPrevios.nombre" type="text" disabled />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label">Edad:</label>
+      <input class="form__input" [value]="datosPrevios.edad" type="number" disabled />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label">Ciudad:</label>
+      <input class="form__input" [value]="datosPrevios.ciudad" type="text" disabled />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label">Género:</label>
+      <input class="form__input" [value]="datosPrevios.genero" type="text" disabled />
+    </div>
+  </section>
+
+  <!-- Formulario activo para enviar datos finales -->
+  <section class="form form--active">
+    <div class="form__group">
+      <label class="form__label" for="ocupacion">Ocupación:</label>
+      <input id="ocupacion" class="form__input" [(ngModel)]="ocupacion" type="text"
+        placeholder="Ocupacion"
+      />
+    </div>
+
+    <div class="form__group">
+      <label class="form__label" for="comentario" >Comentario:</label>
+      <textarea id="comentario" class="form__textarea" [(ngModel)]="comentario" rows="4"></textarea>
+    </div>
+
+    <div class="form__actions">
+      <button class="form__button" (click)="enviar()">Enviar</button>
+    </div>
+  </section>
+
+  <!-- Mensajes de estado -->
+  <div *ngIf="mensajeExito" class="form__message form__message--success">
+    {{ mensajeExito }}
+  </div>
+
+  <div *ngIf="mensajeError" class="form__message form__message--error">
+    {{ mensajeError }}
+  </div>
+</div>
