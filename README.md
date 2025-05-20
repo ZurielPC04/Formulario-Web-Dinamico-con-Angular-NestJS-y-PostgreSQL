@@ -1,4 +1,4 @@
-# Formulario Web Dinámico con Angular, NestJS y PostgreSQL 🚀
+# Formulario Web Dinámico con Angular, NestJS y PostgreSQL
 
 Este proyecto es una aplicación web full-stack que permite recolectar, visualizar y almacenar datos de usuarios mediante formularios interactivos. Utiliza **Angular** para el frontend, **NestJS** para la lógica del backend y **PostgreSQL** como base de datos relacional.
 
