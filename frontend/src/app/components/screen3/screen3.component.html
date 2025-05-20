@@ -1,5 +1,5 @@
 <div class="screen screen3">
-  <h2 class="screen__title">Pantalla 3: Ocupación y Comentario</h2>
+  <h2 class="screen__title">Ocupación y Comentario</h2>
 
   <!-- Mostrar datos anteriores -->
   <section class="form form--readonly">
@@ -28,27 +28,48 @@
   <section class="form form--active">
     <div class="form__group">
       <label class="form__label" for="ocupacion">Ocupación:</label>
-      <input id="ocupacion" class="form__input" [(ngModel)]="ocupacion" type="text"
-        placeholder="Ocupacion"
+      <input
+        id="ocupacion"
+        class="form__input"
+        [(ngModel)]="ocupacion"
+        type="text"
+        placeholder="Ingresa tu ocupacion"
       />
     </div>
 
     <div class="form__group">
       <label class="form__label" for="comentario" >Comentario:</label>
-      <textarea id="comentario" class="form__textarea" [(ngModel)]="comentario" rows="4"></textarea>
+      <textarea id="comentario" class="form__textarea" [(ngModel)]="comentario" rows="4">
+        placeholder="Escribe un comentario"
+      </textarea>
     </div>
 
     <div class="form__actions">
-      <button class="form__button" (click)="enviar()">Enviar</button>
+      <button class="form__button" (click)="abrirConfirmacion()">Enviar</button>
     </div>
   </section>
 
-  <!-- Mensajes de estado -->
+  <!-- Modal de confirmación -->
+  <div class="modal" *ngIf="mostrarConfirmacion">
+    <div class="modal__backdrop" (click)="cerrarConfirmacion()"></div>
+    <div class="modal__content animate__animated animate__fadeInDown">
+      <h3 class="modal__title">Confirmación final</h3>
+      <p class="modal__text">
+        Confirma que los datos son correctos. Una vez enviados se guardarán en la base de datos y <strong>no podrán modificarse</strong>.
+      </p>
+      <div class="modal__actions">
+        <button class="form__button" (click)="confirmar()">Aceptar</button>
+        <button class="form__button form__button--cancel" (click)="cerrarConfirmacion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje visual de confirmación -->
   <div *ngIf="mensajeExito" class="form__message form__message--success">
     {{ mensajeExito }}
   </div>
-
   <div *ngIf="mensajeError" class="form__message form__message--error">
     {{ mensajeError }}
   </div>
+
 </div>

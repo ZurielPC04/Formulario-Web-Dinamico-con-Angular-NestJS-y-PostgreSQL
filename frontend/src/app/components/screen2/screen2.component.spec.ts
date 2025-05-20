@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Screen2Component } from './screen2.component';
 
 describe('Screen2Component', () => {

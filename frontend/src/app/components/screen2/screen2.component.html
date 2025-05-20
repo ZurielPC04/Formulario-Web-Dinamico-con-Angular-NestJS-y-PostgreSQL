@@ -1,5 +1,5 @@
 <div class="screen screen2">
-  <h2 class="screen__title">Pantalla 2: Ciudad y Género</h2>
+  <h2 class="screen__title">Ciudad y Género</h2>
 
   <!-- Mostrar datos anteriores -->
   <section class="form form--readonly">
@@ -18,15 +18,19 @@
   <section class="form form--active">
     <div class="form__group">
       <label class="form__label" for="ciudad">Ciudad:</label>
-      <input id="ciudad" class="form__input" [(ngModel)]="ciudad" type="text"
-        placeholder="Ciudad de residencia"
+      <input
+        id="ciudad"
+        class="form__input"
+        [(ngModel)]="ciudad"
+        type="text"
+        placeholder="Ingresa tu ciudad"
       />
     </div>
 
     <div class="form__group">
       <label class="form__label" for="genero">Género:</label>
-      <select id="genero" class="form__select" [(ngModel)]="genero">
-        <option value="" disabled selected>Seleccione una opción</option>
+      <select id="genero" class="form__input" [(ngModel)]="genero">
+        <option value="">Selecciona una opción</option>
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
         <option value="otro">Otro</option>
@@ -34,8 +38,23 @@
     </div>
 
     <div class="form__actions">
-      <button class="form__button" (click)="guardarYContinuar()">Guardar y continuar</button>
+      <button class="form__button" (click)="abrirConfirmacion()">Guardar y continuar</button>
     </div>
   </section>
 
+  <!-- Modal de confirmación -->
+  <div class="modal" *ngIf="mostrarConfirmacion">
+    <div class="modal__content">
+      <h3 class="modal__title">¿Confirmas que los datos son correctos?</h3>
+      <p class="modal__text">Ciudad: <strong>{{ ciudad }}</strong></p>
+      <p class="modal__text">Género: <strong>{{ genero }}</strong></p>
+      <div class="modal__actions">
+        <button class="modal__button modal__button--confirm" (click)="confirmar()">Aceptar</button>
+        <button class="modal__button modal__button--cancel" (click)="cerrarConfirmacion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+

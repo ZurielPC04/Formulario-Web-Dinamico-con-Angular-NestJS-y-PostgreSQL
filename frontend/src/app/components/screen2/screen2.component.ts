@@ -8,9 +8,15 @@ import { DataService, Datos } from '../../services/data.service';
   styleUrls: ['./screen2.component.css']
 })
 export class Screen2Component implements OnInit {
+
+  // Campos del formulario
   ciudad: string = '';
   genero: string = '';
 
+  // Estado del modal
+  mostrarConfirmacion: boolean = false;
+
+  // Datos recopilados previamente
   datosPrevios: Partial<Datos> = {};
 
   constructor(
@@ -22,14 +28,23 @@ export class Screen2Component implements OnInit {
     this.datosPrevios = this.dataService.getDatos();
   }
 
-  guardarYContinuar(): void {
-    // Guardar datos de esta pantalla (ciudad y genero)
+  // Muestra el modal de confirmación
+  abrirConfirmacion(): void {
+    this.mostrarConfirmacion = true;
+  }
+
+  cerrarConfirmacion(): void {
+    this.mostrarConfirmacion = false;
+  }
+
+  // Acción al confirmar en el modal y guardar datos de esta pantalla (ciudad y genero)
+  confirmar(): void {
     this.dataService.setDatos({
       ciudad: this.ciudad,
       genero: this.genero
     });
-
-    // Navegar a pantalla 3
+    this.mostrarConfirmacion = false;
     this.router.navigate(['/screen3']);
   }
+
 }

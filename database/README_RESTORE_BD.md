@@ -1,11 +1,11 @@
 
-# 📦 Restauración de Base de Datos PostgreSQL
+# Restauración de Base de Datos PostgreSQL
 
 Este documento explica cómo restaurar la base de datos del proyecto en PostgreSQL desde un archivo `.backup`, utilizando la CLI (línea de comandos).
 
 ---
 
-## 🗂️ Ruta del archivo `.backup`
+## Ruta del archivo `.backup`
 Asegúrate de tener tu archivo `.backup` en la siguiente ruta:
 
 ```
@@ -14,21 +14,21 @@ C:\Users\RzVel\OneDrive\Desktop\proyecto-completo\database\backup_base_datos.bac
 
 ---
 
-## 🛠️ Requisitos
+## Requisitos
 
 - PostgreSQL instalado
 - Acceso a la terminal o consola `psql`
 
 ---
 
-## 🔐 Credenciales por defecto
+## Credenciales por defecto
 
 - **Usuario**: `postgres`
 - **Contraseña**: `12345678`
 
 ---
 
-## 🚀 Pasos para restaurar la base de datos
+## Pasos para restaurar la base de datos
 
 ### 1. Abrir terminal PostgreSQL
 
@@ -52,11 +52,11 @@ CREATE DATABASE pagina_web_zuriel;
 pg_restore -U postgres -d pagina_web_zuriel "C:\Users\RzVel\OneDrive\Desktop\proyecto-completo\database\backup_base_datos.backup"
 ```
 
-> ⚠️ Si pide contraseña, escríbela aunque no se vea (no se muestran caracteres). Luego presiona Enter.
+> Si pide contraseña, escríbela aunque no se vea (no se muestran caracteres). Luego presiona Enter.
 
 ---
 
-## ✅ Verificar que se restauró correctamente
+## Verificar que se restauró correctamente
 
 Desde `psql` puedes conectarte:
 
@@ -69,7 +69,7 @@ Y deberías ver la tabla `datos_recabados`.
 
 ---
 
-## 📁 Estructura sugerida del proyecto
+## Estructura sugerida del proyecto
 
 ```
 proyecto-completo/
@@ -81,4 +81,4 @@ proyecto-completo/
 ---
 
 **Autor**: Zuriel  
-**Propósito**: Preparación para entrevista técnica – Proyecto completo con Frontend, Backend y BD.
+**Propósito**: Proyecto completo con Frontend, Backend y BD.

@@ -1,25 +1,45 @@
 <div class="screen screen1">
-  <h2 class="screen__title">Pantalla 1: Nombre y Edad</h2>
+  <h2 class="screen__title">Nombre y Edad</h2>
 
-  <!-- Formulario para capturar nombre y edad -->
+  <!--Llenado de Formulario-->
   <section class="form form--active">
     <div class="form__group">
       <label class="form__label" for="nombre">Nombre:</label>
-      <input id="nombre" class="form__input" [(ngModel)]="datos.nombre" type="text"
-        placeholder="Ingresa tu nombre"
-      />
+      <input id="nombre"
+        class="form__input"
+        [(ngModel)]="datos.nombre"
+        type="text"
+        placeholder="Ingresa tu nombre" />
     </div>
 
     <div class="form__group">
       <label class="form__label" for="edad">Edad:</label>
-      <input id="edad" class="form__input" [(ngModel)]="datos.edad" type="number"
+      <input
+        id="edad"
+        class="form__input"
+        [(ngModel)]="datos.edad"
+        type="number"
+        [min]="0"
         placeholder="Ingresa tu edad"
       />
     </div>
 
     <div class="form__actions">
-      <button class="form__button" (click)="guardarYContinuar()">Guardar y continuar</button>
+      <button class="form__button" (click)="abrirConfirmacion()">Guardar y continuar</button>
     </div>
   </section>
+
+  <!-- Modal de confirmación -->
+  <div class="modal" *ngIf="mostrarConfirmacion">
+    <div class="modal__content">
+      <h3 class="modal__title">¿Confirmas que los datos son correctos?</h3>
+      <p class="modal__text">Nombre: <strong>{{ datos.nombre }}</strong></p>
+      <p class="modal__text">Edad: <strong>{{ datos.edad }}</strong></p>
+      <div class="modal__actions">
+        <button class="modal__button modal__button--confirm" (click)="confirmar()">Aceptar</button>
+        <button class="modal__button modal__button--cancel" (click)="cerrarConfirmacion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
 </div>

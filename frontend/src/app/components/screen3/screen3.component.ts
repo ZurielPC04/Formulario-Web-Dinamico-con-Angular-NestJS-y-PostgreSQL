@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService, Datos } from '../../services/data.service';
 
 @Component({
@@ -8,43 +8,56 @@ import { DataService, Datos } from '../../services/data.service';
   styleUrls: ['./screen3.component.css']
 })
 export class Screen3Component implements OnInit {
+
+  // Campos del formulario
   ocupacion: string = '';
   comentario: string = '';
 
-  datosPrevios: Partial<Datos> = {};
+  // Estado del modal
+  mostrarConfirmacion: boolean = false;
 
-  mensajeExito: string = '';
-  mensajeError: string = '';
+  // Datos recopilados previamente
+  datosPrevios: Partial<Datos> = {};
 
   constructor(
     private dataService: DataService,
-    //private router: Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.datosPrevios = this.dataService.getDatos();
   }
 
-  enviar(): void {
-    // Guardar datos de esta pantalla (ocupacion y comentario)
+  abrirConfirmacion(): void {
+    this.mostrarConfirmacion = true;
+  }
+
+  cerrarConfirmacion(): void {
+    this.mostrarConfirmacion = false;
+  }
+
+  mensajeExito: string = '';
+  mensajeError: string = '';
+
+  // Guardar datos de esta pantalla (ocupacion y comentario)
+  confirmar(): void {
     this.dataService.setDatos({
       ocupacion: this.ocupacion,
       comentario: this.comentario
     });
 
-    const datosFinales: Datos = this.dataService.getDatos();
-
-    this.dataService.enviarDatos(datosFinales).subscribe({
-      next: (res) => {
-        this.mensajeExito = '¡Datos enviados con éxito!';
-        this.mensajeError = '';
-        console.log('Enviado al backend:', res);
+    this.dataService.enviarDatos(this.dataService.getDatos()).subscribe({
+      next: () => {
+      this.mensajeExito = 'Datos enviados correctamente.';
+      this.mensajeError = '';
+      this.mostrarConfirmacion = false;
       },
-      error: (err) => {
-        this.mensajeError = 'Error al enviar los datos.';
+      error: () => {
+        this.mensajeError = 'Hubo un error al enviar los datos.';
         this.mensajeExito = '';
-        console.error(err);
+        this.mostrarConfirmacion = false;
       }
     });
   }
 }
+

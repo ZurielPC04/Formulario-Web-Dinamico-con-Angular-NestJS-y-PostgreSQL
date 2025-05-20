@@ -5,7 +5,7 @@ import { DatosRecabadosController } from './datos_recabados.controller';
 import { DatosRecabados } from './entities/datos_recabados.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([DatosRecabados])], // <- ESTO ES CLAVE
+  imports: [TypeOrmModule.forFeature([DatosRecabados])], 
   controllers: [DatosRecabadosController],
   providers: [DatosRecabadosService],
 })

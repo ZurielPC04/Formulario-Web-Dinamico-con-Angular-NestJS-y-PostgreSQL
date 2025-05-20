@@ -14,6 +14,7 @@ export interface Datos {
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
   private datos: Datos = {
     nombre: '',
