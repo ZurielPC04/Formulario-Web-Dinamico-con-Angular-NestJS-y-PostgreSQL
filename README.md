@@ -4,25 +4,19 @@ Este proyecto es una aplicación web full-stack que permite recolectar, visualiz
 
 ---
 
-## 📌 Características
+## Características
 
-- ✨ Diseño modular y atractivo (Bootstrap + CSS con metodología BEM)
-- 📂 Arquitectura Angular con múltiples componentes y servicios
-- 🌐 API REST desarrollada con NestJS
-- 🗄️ Conexión a base de datos PostgreSQL con validaciones y persistencia
-- 🧠 Uso de directivas Angular como `*ngIf`, `[(ngModel)]`, y control de rutas
-- 🔐 Confirmaciones de envío con modales animados
-- 📈 Código limpio, reutilizable y documentado
-
----
-
-## 📷 Vista del proyecto
-
-![Vista](./path/to/screenshot.png) <!-- Reemplaza por una imagen si lo deseas -->
+- Diseño modular y atractivo (Bootstrap + CSS con metodología BEM)
+- Arquitectura Angular con múltiples componentes y servicios
+- API REST desarrollada con NestJS
+- Conexión a base de datos PostgreSQL con validaciones y persistencia
+- Uso de directivas Angular como `*ngIf`, `[(ngModel)]`, y control de rutas
+- Confirmaciones de envío con modales animados
+- Código limpio, reutilizable y documentado
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠Tecnologías utilizadas
 
 | Frontend     | Backend     | Base de datos |
 |--------------|-------------|----------------|
@@ -32,7 +26,7 @@ Este proyecto es una aplicación web full-stack que permite recolectar, visualiz
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto localmente
+## Cómo ejecutar el proyecto localmente
 
 ### 1. Clona el repositorio
 
@@ -66,7 +60,7 @@ psql -U postgres -d tu_base_de_datos -f base_de_datos.sql
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 proyecto-completo/
@@ -78,13 +72,7 @@ proyecto-completo/
 
 ---
 
-## 💬 Autor
+## Autor
 
 **Zuriel Palafox**  
-[GitHub](https://github.com/ZurielPC04) · [LinkedIn](https://linkedin.com)
-
----
-
-## 📜 Licencia
-
-Este proyecto está bajo la licencia MIT.
+[GitHub](https://github.com/ZurielPC04) 
